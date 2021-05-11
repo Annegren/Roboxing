@@ -1,0 +1,109 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} + 18 ANS {% endblock %}
+
+
+
+
+{% block content %}
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+
+<div class="row">
+    <h1 class="text-center mt-3 mb-5"> ADULTES + 18 ANS </h1>
+    <img class="img-responsive cc-img" src="">
+</div>
+
+<section class="rounded mx-auto d-block">
+
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+  <div class="carousel-inner" >
+    <div class="carousel-item active">
+      <img src="https://zupimages.net/up/21/19/z44y.png" class="d-block w-20 h-15 p-5" >
+    </div>
+    <div class="carousel-item">
+      <img src="https://zupimages.net/up/21/19/yrb4.png" class="d-block w-20 h-15 p-5">
+    </div>
+    <div class="carousel-item">
+      <img src="https://zupimages.net/up/21/19/tp8z.png" class="d-block w-20 h-15 p-5" >
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+</section>
+
+</br>
+</br>
+</br>
+
+<section class="container mt-5 justify-content-center">
+
+    <h2 class="text-center mt-3 mb-5"> JE PARIE SUR </h2>
+
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+  <option selected >CHOISIS TON ROBOT</option>
+  <option value="1">KassTronche</option>
+  <option value="2">KiPlante</option>
+  <option value="3">KiTrace</option>
+
+
+</select>
+
+</section>
+
+</br>
+</br>
+
+<section class="container mt-5 d-flex justify-content-center">
+<select class="form-select form-select-lg" aria-label=".form-select-lg example">
+  <option selected>CHOISIS TA MISE</option>
+  <option value="1">$ 5</option>
+  <option value="2">$ 30</option>
+  <option value="3">$ 50</option>
+</select>
+</section>
+
+</br>
+
+<section class="container mt-3 d-flex justify-content-center">
+  <a href="#myModal" class="trigger-btn" data-toggle="modal"><button type="button" class="btn btn-dark">JE MISE</button></a>
+</section>
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="icon-box">
+          <i class="material-icons">&#xE876;</i>
+        </div>				
+        <h4 class="modal-title">Merci !</h4>	
+      </div>
+      <div class="modal-body">
+        <p class="text-center">Avez vous plus de 18 ans ? !</p>
+      </div>
+      <div class="modal-footer">
+        <a button class="btn btn-success btn-block" href="/home/payment">OK</a>
+        <a button class="btn btn-success btn-block" data-dismiss="modal">NO</a>
+      </div>
+    </div>
+  </div>
+</div>   
+</section>
+
+
+{% endblock %}

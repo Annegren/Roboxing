@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid pt-5" >
+        <h1 class="text-center text-white mt-1">Robot</h1>
+        <div class="separation"><hr></div>
+            <main class="container-fluid mt-5 pb-5">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-s-12">
+                        <img src="{{ robot.image }}" class="img-fluid mt-2" alt="...">
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-s-12">
+                        <img src="{{ robot.accessoire }}" class="img-fluid mt-2" alt="...">
+                    </div>
+                    <div class="col-lg-1 col-md-1"></div>
+                    <div class="col-lg-5 col-md-5 col-s-12 mt-2">
+                        <h2 class="mb-3 text-center">{{ robot.name }}</h2>
+                        <div class="buttons text-center mt-5">
+                            {% if session.user is defined %}
+                                <a class="button_gradient m-3" href="/home/payment/{{ robot.id }}">Acheter</a>
+                            {% endif %}
+                            {% if session.user is not defined %}
+                                <a class="button_gradient m-3" href="/home/login">Acheter</a>
+                            {% endif %}
+                            <a class="button m-3" href="/robot/index">Retour</a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+{% endblock %}

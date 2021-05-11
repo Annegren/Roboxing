@@ -1,0 +1,29 @@
+<form method="post" class="container" enctype="multipart/form-data">
+    <div class="form-box">
+        <div class="errors">
+            {% for error in errors %}
+                <div> {{ error }} </div>
+            {% endfor %}
+        </div>
+        <input type="hidden" value="{{ robot.id }}" name="id">
+        <div class="input-box">
+            <input type="text" class="form-control" id="floatingInput" placeholder="" value="{{ robot.name }}"
+                   name="name">
+            <label for="floatingInput" class="form-label">Nom Robot:</label>
+        </div>
+        <div class="input-box">
+            <input type="text" class="form-control" id="floatingInput" placeholder="" value="{{ robot.accessoire }}"
+                   name="accessoire">
+            <label for="floatingInput" class="form-label">Accessoire :</label>
+        </div>
+        <div class="input-box">
+            <input type="text" class="form-control" id="floatingInput" placeholder="" value="{{ robot.image }}"
+                   name="image">
+            <label for="floatingInput" class="form-label">Robot :</label>
+        </div>
+        <div class="container-fluid">
+            <input type="submit" class="form-button" value="Valider">
+            <a type="back" href="/robot/index" class="return-button" value="Retour"><i class="las la-undo"></i></a>
+        </div>
+    </div>
+</form>

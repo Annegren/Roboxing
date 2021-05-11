@@ -1,0 +1,71 @@
+{% extends 'layout.html.twig' %}
+{% block title %} - Login {% endblock %}
+{% block content %}
+    <section id="bodycard" class="pt-5"> </br></br></br></br>
+        <h2 class="text-center mb-5">Votre paiement</h2>
+
+ <div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="card my-4 p-3">
+            <div class="row main">
+            </div>
+            <div class="row justify-content-center mrow">
+                <div class="col-12"> <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" width="35px" height="35px" /> <img src="https://img.icons8.com/color/48/000000/visa.png" width="35px" height="35px" /> <img src="https://img.icons8.com/color/48/000000/paypal.png" width="35px" height="35px" /> </div>
+            </div>
+            <form class="form-card">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group"> <input type="text" class="form-control p-0" id="number" required><label class="form-control-placeholder p-0" for="number">Numéro de carte</label> </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group"> <input type="text" class="form-control p-0" id="name" required><label class="form-control-placeholder p-0" for="name">Nom</label> </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-12">
+                        <div class="form-group"> <input type="text" class="form-control p-0" id="expdate" required><label class="form-control-placeholder p-0" for="expdate">Date expiration </label> </div>
+                    </div>
+                    <div class="col-sm-4 col-12">
+                        <div class="form-group"> <input type="password" class="form-control p-0" id="passw" required><label class="form-control-placeholder p-0" for="passw">CVV</label> </div>
+                    </div>
+                </div>
+                <div class="row lrow mt-4 mb-3">
+                    <div class="col-sm-8 col-12">
+                        <h3> Total :</h3>
+                    </div>
+                    <div class="col-sm-4 col-12">
+                        <h5>&#36;150</h5>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-sm-12"> <a href="#myModal" class="trigger-btn" data-toggle="modal"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Payer</button> </a></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="icon-box">
+                    <i class="material-icons">&#xE876;</i>
+                </div>				
+                <h4 class="modal-title">Merci !</h4>	
+            </div>
+            <div class="modal-body">
+                <p class="text-center">Votre paiement est confirmé ! Un e-mail de confirmation vient de vous être envoyé !</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>   
+{% endblock %}
+
+
