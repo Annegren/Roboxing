@@ -38,7 +38,7 @@ class RobotManager extends AbstractManager
     public function insert(array $robot)
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (name, accessoire, image) 
-        VALUES (:name, :accessoire, :image,:user_id)");
+        VALUES (:name, :accessoire, :image)");
         $statement->bindValue('name', $robot['name'], \PDO::PARAM_STR);
         $statement->bindValue('accessoire', $robot['accessoire'], \PDO::PARAM_STR);
         $statement->bindValue('image', $robot['image'], \PDO::PARAM_STR);

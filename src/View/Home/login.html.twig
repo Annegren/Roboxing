@@ -1,48 +1,55 @@
 {% extends 'layout.html.twig' %}
 {% block title %} - Login {% endblock %}
 {% block content %}
-    <section id="body" class="pt-5">
-        <h2 class="text-center mb-5">Connexion</h2>
-        <div class="container-fluid p-4">
-            <div class="contact_form row m-5">
-                <form method="post">
-                    <input type="hidden" value="{{ user.id }}" name="id">
-                        <div class="col-md mx-3 my-3">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="floatingInputs" placeholder="Pseudo" name="username">
-                                <label for="floatingInput" class="form-label pt-2">Pseudo: </label>
-                            </div>
-                            {% if errors.username is defined and not empty %}
-                            <div class="alert" role="alert" id="contact_error">       
-                                <p>{{ errors.username }}</p>
-                            </div>
-                            {% endif %}
-                        </div>
-                        <div class="col-md mx-3 my-3">
-                            <div class="form-floating">
-                                <input type="password" class="form-control" id="floatingInputs" placeholder="Mot de passe" name="password">
-                                <label for="floatingInput" class="form-label pt-2">Mot de passe :</label>
-                            </div>
-                            {% if errors.password is defined and not empty %}
-                            <div class="alert" role="alert" id="contact_error">       
-                                <p>{{ errors.password }}</p>
-                            </div>
-                            {% endif %}
-                            {% if errors.password1 is defined and not empty %}
-                            <div class="alert" role="alert" id="contact_error">       
-                                <p>{{ errors.password1 }}</p>
-                            </div>
-                            {% endif %}
-                        </div>
-                    <div class="mt-3 text-center">
-                        <button type="submit" class="button_gradient m-5">Connexion</button>
-                        <p class="mt-5" id="redirect_login">Pas encore inscrit ?
-                        <a href="/home/register" class="button m-3">S'inscrire</a>
-                        </p> 
+    
+
+    <div class="contact1">
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="https://zupimages.net/up/21/19/nhy3.png" alt="IMG">
+			</div>
+
+			<form method="POST" class="contact1-form validate-form">
+				<span class="contact1-form-title">
+					Connectez-vous
+				</span>
+
+				<div class="wrap-input1 validate-input" data-validate = "Name is required">
+					<input class="input1" type="text" name="username" placeholder="Pseudo">
+					<span class="shadow-input1"></span>
+				</div>
+                {% if errors.username is defined and not empty %}
+                    <div class="alert" role="alert" id="contact_error">       
+                        <p>{{ errors.username }}</p>
                     </div>
-                </form>
-            </div>
-        </div>
-    </section>
+                {% endif %}
+				
+
+				<div class="wrap-input1 validate-input" data-validate = "Subject is required">
+					<input class="input1" type="password" name="password" placeholder="Mot de passe">
+					<span class="shadow-input1"></span>
+                </div>
+                {% if errors.password is defined and not empty %}
+                    <div class="alert" role="alert" id="contact_error">       
+                        <p>{{ errors.password }}</p>
+                    </div>
+                {% endif %}
+                {% if errors.password1 is defined and not empty %}
+                    <div class="alert" role="alert" id="contact_error">       
+                        <p>{{ errors.password1 }}</p>
+                    </div>
+                {% endif %}
+
+				<div class="container-contact1-form-btn">
+					<button type="submit" class="contact1-form-btn">
+						<span>
+							Connexion
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
 {% endblock %}
 

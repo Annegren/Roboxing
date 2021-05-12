@@ -1,54 +1,64 @@
 {% extends 'layout.html.twig' %}
 {% block title %} - Inscription {% endblock %}
 {% block content %}
-    <section class="container-fluid px-0 pt-5" id="body">
-        <h1 class="text-center mt-3 mb-3">Inscription</h1>
-        <div class="container-fluid p-4">
-            <div class="contact_form row m-5">
-                <form method="post" enctype="multipart/form-data">
-                    <input type="hidden" value="{{ user.id }}" name="id">
-                    <div>
-                        <label for="username" class="form-label"></label>
-                        <input type="text" class="form-control login_form" id="username" placeholder="Pseudo" name="username">
-                        {% if errors.username is defined and not empty %}
-                        <div class="alert" role="alert" id="contact_error">       
-                            <p>{{ errors.username }}</p>
-                        </div>
-                        {% endif %}
-                        {% if errors.username1 is defined and not empty %}
-                        <div class="alert" role="alert" id="contact_error">       
-                            <p>{{ errors.username1 }}</p>
-                        </div>
-                        {% endif %}
+    <div class="contact1">
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="https://zupimages.net/up/21/19/nhy3.png" alt="IMG">
+			</div>
+
+			<form method="POST" class="contact1-form validate-form">
+				<span class="contact1-form-title">
+					Créer votre compte
+				</span>
+
+				<div class="wrap-input1 validate-input" data-validate = "Name is required">
+					<input class="input1" type="text" name="username" placeholder="Pseudo">
+					<span class="shadow-input1"></span>
+				</div>
+                {% if errors.username is defined and not empty %}
+                    <div class="alert" role="alert" id="contact_error">       
+                        <p>{{ errors.username }}</p>
                     </div>
-                    <div>
-                        <label for="password" class="form-label"></label>
-                        <input type="password" class="form-control login_form" id="password" placeholder="Mot de passe" name="password">
-                        {% if errors.password is defined and not empty %}
+                {% endif %}
+                {% if errors.username1 is defined and not empty %}
+                    <div class="alert" role="alert" id="contact_error">       
+                        <p>{{ errors.username1 }}</p>
+                    </div>
+                {% endif %}
+				
+
+				<div class="wrap-input1 validate-input" data-validate = "Subject is required">
+					<input class="input1" type="password" name="password" placeholder="Mot de passe">
+					<span class="shadow-input1"></span>
+                    {% if errors.password is defined and not empty %}
                         <div class="alert" role="alert" id="contact_error">       
                             <p>{{ errors.password }}</p>
                         </div>
-                        {% endif %}
-                        {% if errors.password1 is defined and not empty %}
+                    {% endif %}
+                    {% if errors.password1 is defined and not empty %}
                         <div class="alert" role="alert" id="contact_error">       
                             <p>{{ errors.password1 }}</p>
                         </div>
-                        {% endif %}
-                    </div>
-                    <div>
-                        <label for="check_password" class="form-label"></label>
-                        <input type="password" class="form-control login_form" id="check_password" placeholder="Vérification du mot de passe" name="check_password">
-                        {% if errors.check_password is defined and not empty %}
+                    {% endif %}
+                </div>
+                <div class="wrap-input1 validate-input" data-validate = "Subject is required">
+                    <input class="input1" type="password" placeholder="Vérification du mot de passe" name="check_password">
+                    {% if errors.check_password is defined and not empty %}
                         <div class="alert" role="alert" id="contact_error">       
                             <p>{{ errors.check_password }}</p>
                         </div>
-                        {% endif %}
-                    </div>
-                    <div class="mt-3 text-center">
-                        <button type="submit" class="button_gradient">S'inscrire</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
+                    {% endif %}
+                </div>
+				<div class="container-contact1-form-btn">
+					<button type="submit" class="contact1-form-btn">
+						<span>
+							S'inscrire
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
 {% endblock %}

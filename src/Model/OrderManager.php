@@ -43,7 +43,7 @@ class OrderManager extends AbstractManager
 
     public function insert(array $order)
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (user_id, combat_id, robot_id) 
+        $statement = $this->pdo->prepare("INSERT INTO `order` (user_id, combat_id, robot_id) 
          VALUES (:user_id, :combat_id, :robot_id)");
         $statement->bindValue('user_id', $order['user_id'], \PDO::PARAM_INT);
         $statement->bindValue('combat_id', $order['combat_id'], \PDO::PARAM_INT);
