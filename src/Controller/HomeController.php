@@ -141,4 +141,8 @@ class HomeController extends AbstractController
     {
         return $this->twig->render('Home/about.html.twig');
     }
+    public function love_robots()
+    {
+        return $this->twig->render('Home/love_robots.html.twig');
+    }
 }

@@ -1,0 +1,9 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+<form action="/api/getNasaPic/">
+
+<input type="submit" name="submit" value="go">
+</form>
+{{ dump(randImg) }}
+
+{% endblock %}

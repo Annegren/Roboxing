@@ -3,88 +3,52 @@
 namespace App\Controller;
 
 use App\Model\CombatManager;
+use App\Model\RobotManager;
+use App\Model\OrderManager;
 
 class CombatController extends AbstractController
 {
-    /**
-     * List combats
-     */
-    public function index(): string
-    {
-        $combatManager = new CombatManager();
-        $combats = $combatManager->selectAll('name');
-
-        return $this->twig->render('combat/index.html.twig', ['combats' => $combats]);
-    }
-
 
     /**
      * Show informations for a specific combat
      */
     public function show(int $id): string
     {
-        $combatManager = new combatManager();
-        $combat = $combatManager->selectOneById($id);
+        $orderManager = new orderManager();
+        $order = $orderManager->selectOneById($id);
 
-        return $this->twig->render('combat/show.html.twig', ['combat' => $combat]);
+        return $this->twig->render('Combat/show.html.twig', ['order' => $order]);
     }
 
-
-    /**
-     * Edit a specific combat
-     */
-    public function edit(int $id): string
-    {
-        $combatManager = new combatManager();
-        $combat = $combatManager->selectOneById($id);
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
-            $combat = array_map('trim', $_POST);
-
-            // TODO validations (length, format...)
-
-            // if validation is ok, update and redirection
-            $combatManager->update($combat);
-            header('Location: /combat/show/' . $id);
-        }
-
-        return $this->twig->render('combat/edit.html.twig', [
-            'combat' => $combat,
-        ]);
-    }
-
-
-    /**
-     * Add a new combat
-     */
     public function add(): string
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
-            $combat = array_map('trim', $_POST);
+            if (!empty($_POST['type']) && !empty($_POST['date']) && !empty($_POST['lieu']) && !empty($_POST['name']) && !empty($_POST['accessoire']) && !empty($_POST['image'])) {
+                $combat = [
+                    'type' => $_POST['type'],
+                    'date' => $_POST['date'],
+                    'lieu' => $_POST['lieu'],
+                ];
+                $robot = [
+                    'name' => $_POST['name'],
+                    'accessoire' => $_POST['accessoire'],
+                    'image' => $_POST['image'],
+                ];
+                $combatManager = new CombatManager();
+                $id1 = $combatManager->insert($combat);
+                $robotManager = new RobotManager();
+                $id2 = $robotManager->insert($robot);
+                $order = [
+                'robot_id' => $id2,
+                'combat_id' => $id1,
+                'user_id' => $_SESSION['user']['id']
+                ];
 
-            // TODO validations (length, format...)
-
-            // if validation is ok, insert and redirection
-            $combatManager = new combatManager();
-            $id = $combatManager->insert($combat);
-            header('Location:/combat/show/' . $id);
+                $orderManager = new OrderManager();
+                $idOrder = $orderManager->insert($order);
+            }
+            header('Location:/combat/show/' . $idOrder);
         }
-
-        return $this->twig->render('combat/add.html.twig');
-    }
-
-
-    /**
-     * Delete a specific combat
-     */
-    public function delete(int $id)
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $combatManager = new combatManager();
-            $combatManager->delete($id);
-            header('Location:/combat/index');
-        }
+        return $this->twig->render('Combat/add.html.twig');
     }
 }

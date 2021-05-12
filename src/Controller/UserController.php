@@ -23,11 +23,7 @@ class UserController extends AbstractController
      */
     public function profil()
     {
-        $robotManager = new RobotManager();
-        $robots = $robotManager->selectAllByUser($_SESSION['user']['id']);
-        $orderManager = new OrderManager();
-        $orders = $orderManager->selectAllByUser($_SESSION['user']['id']);
 
-        return $this->twig->render('Admin/User/index.html.twig', ['robots' => $robots,'orders' => $orders]);
+        return $this->twig->render('Admin/User/index.html.twig');
     }
 }

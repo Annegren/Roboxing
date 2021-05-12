@@ -1,0 +1,99 @@
+<form action="/api/getNasaPic/">
+    <input type="submit" name="submit" value="Générer un lieu !">
+</form>
+
+<form method="post" class="container" enctype="multipart/form-data">
+    <div class="form-box">
+        <div class="errors">
+            {% for error in errors %}
+                <div> {{ error }} </div>
+            {% endfor %}
+        </div>
+            <div class="container text-center">
+
+
+        <input type="hidden" value="{{ combat.id }}" name="id">
+    
+        <div class="input-box fw-bold">
+            <p>DISCIPLINE :</p>
+            <div class="container">
+                <span>
+                    <label for="floatingInput" class="form-label"><img style="height: 100px;" src="https://thumbs.dreamstime.com/b/peu-de-robot-pr%C3%AAt-au-gant-boxe-port-121027732.jpg"></label>
+                    <input type="radio"  id="floatingInput" value="https://thumbs.dreamstime.com/b/peu-de-robot-pr%C3%AAt-au-gant-boxe-port-121027732.jpg" name="type">
+                </span>
+                <span>
+                    <label for="floatingInput" class="form-label"><img style="height: 100px;" src="https://image.freepik.com/free-photo/robot-waving-racing-flag_1048-3568.jpg"></label>
+                    <input type="radio"  id="floatingInput" value="https://image.freepik.com/free-photo/robot-waving-racing-flag_1048-3568.jpg" name="type">
+                </span>
+                <span>
+                    <label for="floatingInput" class="form-label"><img style="height: 100px;" src="https://thumbs.dreamstime.com/b/un-robot-d-intelligence-artificielle-qui-envahit-avec-une-grande-%C3%A9p%C3%A9e-illustration-blanche-du-fond-185842448.jpg"></label>
+                    <input type="radio"  id="floatingInput" value="https://thumbs.dreamstime.com/b/un-robot-d-intelligence-artificielle-qui-envahit-avec-une-grande-%C3%A9p%C3%A9e-illustration-blanche-du-fond-185842448.jpg" name="type">
+                </span>
+            </div>
+        </div>
+        <div class="input-box fw-bold">
+            <p> LIEU:</p>
+            <div class="container">
+                <span>
+                    <label for="floatingInput" class="form-label"><img style="height: 80px;" src="{{ randImg }}"></label>
+                    <input type="radio"  id="floatingInput" value="{{ randImg }}" name="lieu">
+                </span>
+            </div>
+        </div>
+        <span>
+                <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">DATE</label>
+  <input type="date" class="form-control" id="exampleFormControlInput1" name="date">
+                </div>
+        </span>
+
+            </div>
+             <input type="hidden" value="{{ robot.id }}" name="id">
+        <div class="input-box">
+            <input type="text" class="form-control" id="floatingInput" placeholder="" value="{{ robot.name }}"
+                   name="name">
+            <label for="floatingInput" class="form-label">Nom Robot:</label>
+        </div>
+        <div class="input-box">
+            <p>Robot :</p>
+            <div class="container">
+                <span>
+                    <label for="floatingInput" class="form-label"><img style="height: 100px;" src="https://zupimages.net/up/21/19/cg7j.png"></label>
+                    <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/cg7j.png" name="image">
+                </span>
+                <span>
+                    <label for="floatingInput" class="form-label"><img style="height: 100px;" src="https://zupimages.net/up/21/19/l3em.png"></label>
+                    <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/l3em.png" name="image">
+                </span>
+                <span>
+                    <label for="floatingInput" class="form-label"><img style="height: 100px;" src="https://zupimages.net/up/21/19/bqx3.png"></label>
+                    <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/bqx3.png" name="image">
+                </span>
+            </div>
+        </div>
+        <div class="input-box">
+            <p>Accessoires :</p>
+            <div class="container">
+                <span>
+                    <label for="floatingInput" class="form-label"><img style="height: 80px;" src="https://zupimages.net/up/21/19/gc0n.png"></label>
+                    <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/gc0n.png" name="accessoire">
+                </span>
+                <span>
+                    <label for="floatingInput" class="form-label"><img style="height: 80px;" src="https://zupimages.net/up/21/19/7f91.png"></label>
+                    <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/7f91.png" name="accessoire">
+                </span>
+                <span>
+                    <label for="floatingInput" class="form-label"><img style="height: 80px;" src="https://zupimages.net/up/21/19/jdj4.png"></label>
+                    <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/jdj4.png" name="accessoire">
+                </span>
+            </div>
+        </div>
+       <div class="container-fluid">
+           <input type="submit" class="form-button" value="Valider">
+           <a type="back" href="/robot/index" class="return-button" value="Retour"><i class="las la-undo"></i></a>
+       </div>
+   </div>
+   </div>
+</form> 
+
+

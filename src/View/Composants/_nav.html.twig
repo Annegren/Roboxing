@@ -1,15 +1,16 @@
 <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#page-top">Roboxing</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
+        <div class="container"><a class="navbar-brand" href="/">Roboxing</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/home/about">A propos de Roboxing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/robot/add">Créer votre robot</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Participer</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/user/profil">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/home/about">Le Concept</a></li>
+                    <li class="nav-item"><a class="nav-link"  href="/combat/add">Participer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/home/love_robots">Frictionner vos boulons</a></li>
                     {% if session.user is not defined %}
+                    <li class="nav-item"><a class="nav-link" href="/home/pari">Miser</a></li>
                     <li class="nav-item"><a class="nav-link" href="/home/login">Se connecter</a></li>
                     {% endif %}
                     {% if session.user is defined %}
+                    <li class="nav-item"><a class="nav-link" href="/user/profil">Profil</a></li>
                     <li class="nav-item"><a class="nav-link" href="/home/logout">Déconnexion</a></li>
                     {% endif %}
                 </ul>

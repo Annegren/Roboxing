@@ -34,7 +34,7 @@ class OrderManager extends AbstractManager
     public function selectOneById(int $id)
     {
         // prepared request
-        $statement = $this->pdo->prepare("SELECT robot.id,robot.name,image,accessoire,combat.id,lieu,date,type,user.id,username FROM " . self::TABLE . ' JOIN combat ON combat.id=order.combat_id JOIN robot ON robot.id=order.robot_id JOIN user ON user.id=order.user_id WHERE id=:id');
+        $statement = $this->pdo->prepare("SELECT robot.id,robot.name,image,accessoire,combat.id,lieu,date,type FROM " . self::TABLE . ' JOIN combat ON combat.id=order.combat_id JOIN robot ON robot.id=order.robot_id JOIN user ON user.id=order.user_id WHERE id=:id');
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
 
