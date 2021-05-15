@@ -1,31 +1,310 @@
-{% extends 'layout.html.twig' %}
 
+{% extends 'layout.html.twig' %}
 {% block content %}
-    <div class="container-fluid pt-5" >
-        <h1 class="text-center text-white mt-1">Robot {{order.robot.name}}</h1>
-        <div class="separation"><hr></div>
-            <main class="container-fluid mt-5 pb-5">
+<header id="home">
+            
+            <section class="hero pb-5" id="hero">
+              <div class="container">
                 <div class="row">
-                    <div class="col-lg-5 col-md-5 col-s-12">
-                        <img src="{{ order.robot.image }}" class="img-fluid mt-2" alt="...">
-                    </div>
-                    <div class="col-lg-5 col-md-5 col-s-12">
-                        <img src="{{ order.robot.accessoire }}" class="img-fluid mt-2" alt="...">
-                    </div>
-                    <div class="col-lg-1 col-md-1"></div>
-                </div> 
-                  <h1 class="text-center text-white mt-1">Détails du combat :</h1>
-                  <div class="row">
-                    <div class="col-lg-4 col-md-4 col-s-12 mt-2">
-                        <img src="{{ order.combat.type }}" class="img-fluid mt-2" alt="...">
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-s-12 mt-2">
-                        <img src="{{ order.combat.lieu }}" class="img-fluid mt-2" alt="...">
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-s-12 mt-2">
-                        <div>Le {{ order.combat.date }}</div>
-                    </div>
+                  <div class="col-md-12 text-right navicon">
+                    <a id="nav-toggle" class="nav_slide_button bg-secondary" href="#"><span></span></a>
                   </div>
-            </main>
+                </div>
+                <div class="col-md-8 col-md-offset-2 text-center inner p-3">
+                    <h1 class="animated fadeInDown pb-3" style="color: rgb(173, 173, 173); font-size: 50px;">ROBOXING<span style="color: rgb(221, 221, 221);">EXPERIENCE</span></h1>
+                    <p class="animated fadeInUp delay-05s pt-5" style="font-size: 25px; color: rgb(233, 233, 233);">Sur Mars, on s'ennuie vite. Pourquoi ne pas inviter quelques robots à prendre part à une <em>compétition sportive </em>?</p>
+                </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-3 text-center">
+                    <a href="home/about" class="learn-more-btn" style="background-color: rgba(4, 104, 129, 0.918);">Comment participer ?</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </header>
+<div class="container">
+    <div class="row">
+        <div class="well">
+            <h1 class="text-center">RÉCAPITULATIF</h1>
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                    <div class="media col-md-3">
+                        <figure class="pull-left">
+                             <h1 class="text-center text-black mt-1"> {{order.name}}</h1>
+                        </figure>
+                    </div>
+                    <div class="col-md-5">
+                        <h4 class="list-group-item-heading">NOM ROBOT</h4>
+                        <p class="list-group-item-text">
+                        </br>
+                        </br>
+                        Est le prénom de votre robot
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="address">OK</div>                                                                                                
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item">
+                    <div class="media col-md-3">
+                        <figure class="pull-left">
+                        <img src="{{ order.image }}" class="img-fluid mt-2" alt="...">
+                        </figure>
+                    </div>
+                    <div class="col-md-5">
+                        <h4 class="list-group-item-heading"> LOOK</h4>
+                        <p class="list-group-item-text">
+                        </br>
+                        </br>
+                        Ce à quoi votre robot ressemble
+                           
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="address">STOCK OK</div>                                                                                                
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            <a href="#" class="list-group-item">
+
+                    <div class="media col-md-3">
+                        <figure class="pull-left">
+                           <img src="{{ order.accessoire }}" class="img-fluid mt-2" alt="...">
+                        </figure>
+                    </div>
+                    <div class="col-md-5">
+                        <h4 class="list-group-item-heading">ACCESSOIRE</h4>
+                        <p class="list-group-item-text">
+                        </br>
+                        </br>
+                            L'accessoire que vous avez choisi pour combattre 
+                            
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="address">STOCK OK</div>                                                                                                
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+
+    <a href="#" class="list-group-item">
+    <div class="media col-md-3">
+        <figure class="pull-left">
+        <img src="{{ order.type }}" class="img-fluid mt-2" alt="...">
+        </figure>
     </div>
+    <div class="col-md-5">
+        <h4 class="list-group-item-heading">DISCIPLINE</h4>
+        <p class="list-group-item-text">
+        </br>
+        </br>
+        Avez-vous fait le bon choix ? Nous le saurons bientôt...
+        
+        </p>
+    </div>
+    <div class="col-md-4 text-center">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="address">PLACE ENREGISTRÉE</div>                                                                             
+            </div>
+        </div>
+    </div>
+</a>
+<a href="#" class="list-group-item">
+    <div class="media col-md-3">
+        <figure class="pull-left">
+        <img src="{{ order.lieu }}" class="img-fluid mt-2" alt="...">
+        </figure>
+    </div>
+    <div class="col-md-5">
+        <h4 class="list-group-item-heading">LIEU DE L'AFFRONTEMENT</h4>
+        <p class="list-group-item-text">
+        </br>
+        </br>
+        Le lieu de rendez vous le jour du combat.  
+        </p>
+    </div>
+    <div class="col-md-4 text-center">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="address">PLACE ENREGISTRÉE</div>                                                                             
+            </div>
+        </div>
+    </div>
+</a>
+<a href="#" class="list-group-item">
+    <div class="media col-md-3">
+        <figure class="pull-left">
+        <img src="https://png.pngtree.com/png-vector/20190115/ourlarge/pngtree-vector-calendar-icon-png-image_318152.jpg" class="img-fluid mt-2" alt="...">
+        </figure>
+    </div>
+    <div class="col-md-5">
+        <h4 class="list-group-item-heading">DATE DE L'AFFRONTEMENT</h4>
+        <p class="list-group-item-text">
+            </br>
+            </br>
+        {{ order.date }}
+            
+        
+        </p>
+    </div>
+    <div class="col-md-4 text-center">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="address">DISPONIBLE</div>                                                                             
+            </div>
+        </div>
+    </div>
+</a>
+<div class=text-center>
+    <a class="button m-2" href="/contact/new">Commande</a>
+    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.personicon {
+    font-size: 217px;
+    color:#F58723;
+}
+
+.address {
+    font-size: 37px;
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+
+a.list-group-item {
+    height: auto;
+    min-height: 250px;
+}
+
+a.list-group-item:hover, a.list-group-item:focus {
+    border-left:10px solid #2d48a9;
+    border-right:10px solid #2d48a9;
+}
+
+a.list-group-item {
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+}
+</style>
+
+<!-- you need to include the shieldui css and js assets in order for the charts to work -->
+<link rel="stylesheet" type="text/css" href="https://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+<script type="text/javascript" src="https://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        $("#code1281").shieldBarcode({
+            type: "CODE-128",
+            value: "1111 17th"
+        });
+        $("#code1282").shieldBarcode({
+            type: "CODE-128",
+            value: "1114 17th"
+        });
+        $("#code1283").shieldBarcode({
+            type: "CODE-128",
+            value: "1120 17th"
+        });
+    });
+</script>
+
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

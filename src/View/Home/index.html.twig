@@ -1,7 +1,8 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <header id="home_background" class="text-center text-white d-flex masthead my-5 py-5" style="background-image:url('../../public/assets/images/mars-header.jpg');">
+
+    {#<header id="home_background" class="text-center text-white d-flex masthead my-5 py-5" style="background-image:url('../../public/assets/images/mars-header.jpg');">
         <div class="container my-auto">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
@@ -91,5 +92,195 @@
         <div class="container text-center">
             <h2 class="mb-4">Commencez maintenant ! Persévérance et Ingéniosité s'impatientent et veulent du spectacle !</h2><a class="btn btn-light btn-xl sr-button" role="button" data-aos="zoom-in" data-aos-duration="400" data-aos-once="true" href="#">Commencez</a>
         </div>
+    </section>#}
+
+    <section id="top">
+        <header id="home">
+            
+            <section class="hero pb-5" id="hero">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12 text-right navicon">
+                    <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+                  </div>
+                </div>
+                <div class="col-md-8 col-md-offset-2 text-center inner p-3">
+                    <h1 class="animated fadeInDown pb-3" style="color: rgb(173, 173, 173); font-size: 50px;">ROBOXING<span style="color: rgb(221, 221, 221);">EXPERIENCE</span></h1>
+                    <p class="animated fadeInUp delay-05s pt-5" style="font-size: 25px; color: rgb(233, 233, 233);">Sur Mars, on s'ennuie vite. Pourquoi ne pas inviter quelques robots à prendre part à une <em>compétition sportive </em>?</p>
+                </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-3 text-center">
+                    <a href="home/about" class="learn-more-btn" style="background-color: rgba(4, 104, 129, 0.918);">Comment participer ?</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </header>
+          <section class="intro text-center section-padding" id="intro">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 wp1">
+                  <h1 class="arrow">Envie de combler l'ennui ? Rejoignez notre Olympiade !</h1>
+                  <p>Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent id tempor ipsum. Fusce at massa ac nunc porta fringilla sed eget neque. Quisque quis pretium nulla. Fusce eget bibendum neque, vel volutpat augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="features text-center section-padding" id="features">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <h1 class="arrow">Ce dont vous avez besoin...</h1>
+                  <div class="features-wrapper">
+                    <div class="col-md-4 wp2">
+                      <div class="icon">
+                        <i class="fa fa-laptop shadow"></i>
+                      </div>
+                      <h2>Un ordinateur</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
+                      primis in faucibus.</p>
+                    </div>
+                    <div class="col-md-4 wp2 delay-05s">
+                        <div class="icon">
+                            <i class="fa fa-heart shadow"></i>
+                          </div>
+                      <h2>Un bon esprit</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
+                      primis in faucibus.</p>
+                    </div>
+                    <div class="col-md-4 wp2 delay-1s">
+                      <div class="icon">
+                        <i class="fa fa-heart shadow"></i>
+                      </div>
+                      <h2>De l'envie</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
+                      primis in faucibus.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="swag text-center">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <h1>I got 99 Problems<span>but <em>design</em> 'aint one</span></h1>
+                  <a href="#portfolio" class="down-arrow-btn"><i class="fa fa-chevron-down"></i></a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="ignite-cta text-center">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <a href="combat/add" class="ignite-btn">Commencez-maintenant !</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="team text-center section-padding" id="team">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <h1 class="arrow">Qui sommes-nous ?</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="team-wrapper">
+                  <div id="teamSlider">
+                    <ul class="slides">
+                      <li>
+                        <div class="col-md-4 wp5">
+                          <img style="height: 12rem;" src="https://cdn.discordapp.com/attachments/840256673338621973/841987749032886302/mars-helicopter-ingenuity-espace-nasa.jpg" alt="Team Member">
+                          <h2>Percy</h2>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                          <div class="social">
+                            <ul class="social-buttons">
+                              <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                              <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                              <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                            </ul>
+                          </div>
+                        </div>
+  
+                        <div class="col-md-4 wp5 delay-05s">
+                          
+                          <div class="social">
+                            <ul class="social-buttons">
+                              
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-4 wp5 delay-1s">
+                          <img style="height: 12rem;" src="https://cdn.discordapp.com/attachments/840256673338621973/841987818683498506/715a45dc2d_50173284_2-1-pia23764-rovernameplateonmars.jpg" alt="Team Member">
+                          <h2>Ginny</h2>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                          <div class="social">
+                            <ul class="social-buttons">
+                              <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                              <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                              <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="subscribe text-center">
+            <div class="container">
+              <h1><i class="fa fa-paper-plane"></i><span>Souscrivez à notre newsletter</span></h1>
+              <form action="#">
+                <input type="text" name="" value="" placeholder="" required>
+                <input type="submit" name="" value="Envoyer">
+              </form>
+            </div>
+          </section>
+          <section class="dark-bg text-center section-padding contact-wrap" id="contact">
+            <a href="#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <h1 class="arrow">Nos coordonnées</h1>
+                </div>
+              </div>
+              <div class="row contact-details">
+                <div class="col-md-4">
+                  <div class="light-box box-hover">
+                    <h2><i class="fa fa-map-marker"></i><span>Adresse</span></h2>
+                    <p>20 rue du Paradis, Mars Attack City, Mars</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="light-box box-hover">
+                    <h2><i class="fa fa-mobile"></i><span>Téléphone</span></h2>
+                    <p>+555 66 77 3322</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="light-box box-hover">
+                    <h2><i class="fa fa-paper-plane"></i><span>Email</span></h2>
+                    <p><a href="#">mars@mars.com</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <ul class="social-buttons">
+                    <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
     </section>
 {% endblock %}

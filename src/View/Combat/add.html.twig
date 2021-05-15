@@ -1,8 +1,32 @@
-{% extends 'layout.html.twig' %}
+{#{% extends 'layout.html.twig' %}
 
 {% block content %}
     <div class="container text-center">
     <h1>GAME</h1>
     </div>
+    {% include 'Combat/_form.html.twig' %}
+{% endblock %} #}
+
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+<header id="home">
+            
+	<section class="hero" id="hero" style="background-image: url('https://cdn.discordapp.com/attachments/840256673338621973/841808703568871444/Mars-Header-March-2020.jpg');">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-md-12 text-right navicon">
+			<a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-md-8 col-md-offset-2 text-center inner">
+			<h1 class="animated fadeInDown" style="color: rgb(240, 240, 240); font-size: 50px;">CREEZ VOTRE<span style="color: rgb(194, 194, 194);">PARTIE</span></h1>
+		  </div>
+		</div>
+	  </div>
+	</section>
+</header>
     {% include 'Combat/_form.html.twig' %}
 {% endblock %}

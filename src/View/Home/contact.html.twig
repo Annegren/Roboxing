@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{#{% extends 'layout.html.twig' %}
 {% block content %}
 	<section class="container-fluid pt-5 px-0" id="body">
 		<h1 class="text-center"> RECOIS ET ENTRAINE TON ROBOT GRACE A NOS PACKS </h1>
@@ -112,4 +112,144 @@
 			</div>
 		</div>   
 	</section>
+{% endblock %} #}
+
+{% extends 'layout.html.twig' %}
+{% block content %}
+<header id="home">
+            
+	<section class="hero" id="hero" style="background-image: url('https://advancedtech.airliquide.com/sites/abt_at/files/styles/800x625/public/2016/12/06/mars-short-read-overlay1.jpg');">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-md-12 text-right navicon">
+			<a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-md-8 col-md-offset-2 text-center inner">
+			<h1 class="animated fadeInDown">RECOIS ET ENTRAINE TON ROBOT GRACE<span>A NOS PACKS</span></h1>
+		
+		  </div>
+		</div>
+	  </div>
+	</section>
+  </header>
+	<section class="container-fluid pt-5 px-0" id="body">
+		<h1 class="text-center"> RECOIS ET ENTRAINE TON ROBOT GRACE A NOS PACKS </h1>
+		<div class="container-fluid p-4">
+			<div class="contact_form row m-5" id="contact_row">
+				<form method="post">
+					
+						
+							<div class="wrap-input1 validate-input" data-validate = "Name is required">
+								<input class="input1" type="text" name="username" placeholder="Nom">
+								<span class="shadow-input1"></span>
+							</div>
+							<div class="wrap-input1 validate-input" data-validate = "Name is required">
+								<input class="input1" type="text" name="username" placeholder="Email">
+								<span class="shadow-input1"></span>
+							</div>
+							<div class="wrap-input1 validate-input" data-validate = "Name is required">
+								<input class="input1" type="text" name="username" placeholder="Adresse">
+								<span class="shadow-input1"></span>
+							</div>
+					
+							<div class="wrap-input1 validate-input" data-validate = "Name is required">
+							<select name="subject" class="form-control" style="border-radius: 30px" id="floatingInputs">
+								<option value="Sujet de la demande">Sélectionnez un package</option>
+								<option value="Echange">Pack 1</option>
+								<option value="Retour">Pack 2</option>
+								<option value="Informations">Pack 3</option>
+							</select>
+							<span class="shadow-input1"></span>
+							</div>
+						
+					{% if errors.subject is defined and not empty %}
+						<div class="alert alert-warning" role="alert">
+							{{ errors.subject }}
+						</div>
+					{% endif %}
+
+<section>
+<div class="card-group mt-5 text-center">
+  <div class="card">
+    <img src="https://png.pngtree.com/png-vector/20190618/ourlarge/pngtree-first-aid-box-line-black-icon-png-image_1503402.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">PACK 1</h5>
+      <p class="card-text"> DES OUTILS POUR RÉPARER VOTRE ROBOT EN CAS DE CASSE.</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://static.vecteezy.com/ti/vecteur-libre/p1/602343-icone-de-la-belle-nourriture-chaude-ligne-noire-gratuit-vectoriel.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">PACK 2</h5>
+      <p class="card-text">DE LA NOURRITURE SPÉCIALE ROBOT</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://static.vecteezy.com/ti/vecteur-libre/p1/453610-icones-de-gadgets-noirs-vectoriel.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">PACK 3</h5>
+      <p class="card-text"> MULTIPLES GADGETS POUR PERSONNALISER VOTRE ROBOT</p>
+    </div>
+  </div>
+</div>
+</section>
+
+					{#<div class="form-floating mt-4 text-center">
+						<a href="#myModal" class="trigger-btn" data-toggle="modal"><input type="submit" class="button_gradient" value="Valider"></a>
+						<a type="back" href="/" class="button m-2" value="Retour">Retour</a>
+					</div>#}
+					
+					<div class=text-center>
+						<button type="button" class="button m-2" data-toggle="modal" data-target="#exampleModal">
+							Valider
+						  </button>
+						  <a type="back" href="/" class="button m-2" value="Retour">Retour</a>
+						</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Modal HTML -->
+		<div id="exampleModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-confirm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="icon-box">
+							<i class="material-icons">&#xE876;</i>
+						</div>				
+						<h4 class="modal-title">Merci !</h4>	
+					</div>
+					<div class="modal-body">
+						<p class="text-center">Votre demande est envoyée ! Vous recevrez votre robot dans les plus bref délais !</p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+					
+						<button class="btn btn-success btn-block" ><a  class="btn btn-success btn-block" href="/">Retour</a></button>
+					</div>
+				</div>
+			</div>
+		</div> 
+		{#<div id="myModal" class="modal fade">
+			<div class="modal-dialog modal-confirm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="icon-box">
+							<i class="material-icons">&#xE876;</i>
+						</div>				
+						<h4 class="modal-title">Merci !</h4>	
+					</div>
+					<div class="modal-body">
+						<p class="text-center">Votre demande est envoyée ! Vous recevrez votre robot dans les plus bref délais !</p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>   
+	</section>#}
 {% endblock %}
+

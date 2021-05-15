@@ -23,11 +23,11 @@ class CombatController extends AbstractController
     public function add(): string
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (!empty($_POST['type']) && !empty($_POST['date']) && !empty($_POST['lieu']) && !empty($_POST['name']) && !empty($_POST['accessoire']) && !empty($_POST['image'])) {
+            if (!empty($_POST['type']) && !empty($_POST['date']) && !empty($_POST['name']) && !empty($_POST['accessoire']) && !empty($_POST['image'])) {
                 $combat = [
                     'type' => $_POST['type'],
                     'date' => $_POST['date'],
-                    'lieu' => $_POST['lieu'],
+                    'lieu' => $_SESSION['user']['image'],
                 ];
                 $robot = [
                     'name' => $_POST['name'],
@@ -47,7 +47,7 @@ class CombatController extends AbstractController
                 $orderManager = new OrderManager();
                 $idOrder = $orderManager->insert($order);
             }
-            header('Location:/combat/show/' . $idOrder);
+           header('Location:/combat/show/' . $idOrder);
         }
         return $this->twig->render('Combat/add.html.twig');
     }

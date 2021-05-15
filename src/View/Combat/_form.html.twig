@@ -1,8 +1,4 @@
-<form action="/api/getNasaPic/">
-    <input type="submit" name="submit" value="Générer un lieu !">
-</form>
-
-<form method="post" class="container" enctype="multipart/form-data">
+<form method="post" class="container contact-form" enctype="multipart/form-data">
     <div class="form-box">
         <div class="errors">
             {% for error in errors %}
@@ -15,7 +11,7 @@
         <input type="hidden" value="{{ combat.id }}" name="id">
     
         <div class="input-box fw-bold">
-            <p>DISCIPLINE :</p>
+            <p style="font-size: 25px; margin: 10px;" class="pb-5 pt-5">Discipline :</p>
             <div class="container">
                 <span>
                     <label for="floatingInput" class="form-label"><img style="height: 100px;" src="https://thumbs.dreamstime.com/b/peu-de-robot-pr%C3%AAt-au-gant-boxe-port-121027732.jpg"></label>
@@ -31,30 +27,34 @@
                 </span>
             </div>
         </div>
-        <div class="input-box fw-bold">
-            <p> LIEU:</p>
-            <div class="container">
-                <span>
-                    <label for="floatingInput" class="form-label"><img style="height: 80px;" src="{{ randImg }}"></label>
-                    <input type="radio"  id="floatingInput" value="{{ randImg }}" name="lieu">
-                </span>
-            </div>
-        </div>
+        <hr>
         <span>
-                <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">DATE</label>
-  <input type="date" class="form-control" id="exampleFormControlInput1" name="date">
+            <div class="mb-3 fw-bold">
+            {#<label for="exampleFormControlInput1" class="form-label">DATE</label>
+            <input type="date" class="form-control" id="exampleFormControlInput1" name="date"> #}
+            <div class="wrap-input1 validate-input" data-validate = "Subject is required">
+                <p style="font-size: 25px; margin: 10px;" class="pb-5 pt-5">Date :</p>
+                <input class="input1" type="date" name="date" placeholder="Date">
+                <span class="shadow-input1"></span>
+            </div>
                 </div>
         </span>
 
             </div>
              <input type="hidden" value="{{ robot.id }}" name="id">
-        <div class="input-box">
+        {#<<div class="input-box">
             <input type="text" class="form-control" id="floatingInput" placeholder="" value="{{ robot.name }}"
                    name="name">
             <label for="floatingInput" class="form-label">Nom Robot:</label>
+        </div>#}
+        <hr>
+        <div class="wrap-input1 validate-input text-center fw-bold" data-validate = "Subject is required">
+            <p style="font-size: 25px; margin: 10px;" class="pb-5 pt-5">Nom de votre Robot :</p>
+            <input class="input1" type="text" name="name" value="{{ robot.name }}">
+            <span class="shadow-input1"></span>
         </div>
-        <div class="input-box">
+        <hr>
+        {#<div class="input-box">
             <p>Robot :</p>
             <div class="container">
                 <span>
@@ -70,8 +70,26 @@
                     <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/bqx3.png" name="image">
                 </span>
             </div>
+        </div>#}
+        <div class="input-box pt-5 text-center fw-bold">
+            <p style="font-size: 25px; margin: 10px;" class="pb-5">Robot :</p>
+            <div class="container">
+                <span class="p-5">
+                    <label for="floatingInput" class="form-label"><img style="height: 150px;" src="https://zupimages.net/up/21/19/cg7j.png"></label>
+                    <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/cg7j.png" name="image">
+                </span>
+                <span class="p-5">
+                    <label for="floatingInput" class="form-label"><img style="height: 150px;" src="https://zupimages.net/up/21/19/l3em.png"></label>
+                    <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/l3em.png" name="image">
+                </span>
+                <span class="p-5">
+                    <label for="floatingInput" class="form-label"><img style="height: 150px;" src="https://zupimages.net/up/21/19/bqx3.png"></label>
+                    <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/bqx3.png" name="image">
+                </span>
+            </div>
         </div>
-        <div class="input-box">
+        <hr>
+        {#<div class="input-box">
             <p>Accessoires :</p>
             <div class="container">
                 <span>
@@ -87,9 +105,33 @@
                     <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/jdj4.png" name="accessoire">
                 </span>
             </div>
+        </div>#}
+        <div class="input-box mt-5 pt-5 text-center fw-bold">
+            <p style="font-size: 25px; margin: 10px;" class="pb-5">Accessoires :</p>
+            <div class="container">
+                <span class="p-5">
+                    <label for="floatingInput" class="form-label"><img style="height: 80px;" src="https://zupimages.net/up/21/19/gc0n.png"></label>
+                    <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/gc0n.png" name="accessoire">
+                </span>
+                <span class="p-5">
+                    <label for="floatingInput" class="form-label"><img style="height: 80px;" src="https://zupimages.net/up/21/19/7f91.png"></label>
+                    <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/7f91.png" name="accessoire">
+                </span>
+                <span class="p-5">
+                    <label for="floatingInput" class="form-label"><img style="height: 80px;" src="https://zupimages.net/up/21/19/jdj4.png"></label>
+                    <input type="radio"  id="floatingInput" value="https://zupimages.net/up/21/19/jdj4.png" name="accessoire">
+                </span>
+            </div>
         </div>
        <div class="container-fluid">
-           <input type="submit" class="form-button" value="Valider">
+           {#<input type="submit" class="form-button" value="Valider"> #}
+           <div class="container-contact1-form-btn">
+            <button type="submit" name="submit" class="button m-2">
+                <span>
+                    Valider
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </span>
+            </button>
            <a type="back" href="/robot/index" class="return-button" value="Retour"><i class="las la-undo"></i></a>
        </div>
    </div>

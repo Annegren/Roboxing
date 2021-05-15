@@ -23,7 +23,8 @@ class UserController extends AbstractController
      */
     public function profil()
     {
-
-        return $this->twig->render('Admin/User/index.html.twig');
+        $orderManager = new OrderManager();
+        $orders=$orderManager->selectAll('order.id');
+        return $this->twig->render('User/profil.html.twig', ['orders' => $orders]);
     }
 }

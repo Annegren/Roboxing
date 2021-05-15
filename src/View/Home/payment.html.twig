@@ -1,8 +1,25 @@
 {% extends 'layout.html.twig' %}
 {% block title %} - Login {% endblock %}
 {% block content %}
-    <section id="bodycard" class="pt-5"> </br></br></br></br>
-        <h2 class="text-center mb-5">Votre paiement</h2>
+
+<header id="home">
+            
+	<section class="hero" id="hero" style="background-image: none; padding: 15px;">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-md-12 text-right navicon">
+			<a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-md-8 col-md-offset-2 text-center inner pt-1">
+			<h1 class="animated fadeInDown" style="padding: 15px;">VOTRE<span>PAIEMENT</span></h1>
+		  </div>
+		</div>
+	  </div>
+	</section>
+</header>
+    <section id="bodycard" class="pt-5"> 
 
  <div class="container-fluid">
     <div class="row justify-content-center">
@@ -15,40 +32,43 @@
             <form class="form-card">
                 <div class="row">
                     <div class="col-12">
-                        <div class="form-group"> <input type="text" class="form-control p-0" id="number" required><label class="form-control-placeholder p-0" for="number">Numéro de carte</label> </div>
+                        <div class="form-group"> <input type="text" class="form-control p-0" id="number" required><label class="form-control-placeholder p-0" for="number"><p style="color: black;">Numéro de carte</p></label> </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="form-group"> <input type="text" class="form-control p-0" id="name" required><label class="form-control-placeholder p-0" for="name">Nom</label> </div>
+                        <div class="form-group"> <input type="text" class="form-control p-0" id="name" required><label class="form-control-placeholder p-0" for="name"><p style="color: black;">Nom</p></label> </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-4 col-12">
-                        <div class="form-group"> <input type="text" class="form-control p-0" id="expdate" required><label class="form-control-placeholder p-0" for="expdate">Date expiration </label> </div>
+                <div class="row pt-2">
+                    <div class="col-sm-4 col-12 pt-2">
+                        <div class="form-group"> <input type="text" class="form-control p-0" id="expdate" required><label class="form-control-placeholder p-0" for="expdate"><p style="color: black;">Date expiration</p> </label> </div>
                     </div>
-                    <div class="col-sm-4 col-12">
-                        <div class="form-group"> <input type="password" class="form-control p-0" id="passw" required><label class="form-control-placeholder p-0" for="passw">CVV</label> </div>
+                    <div class="col-sm-4 col-12 pt-2">
+                        <div class="form-group"> <input type="password" class="form-control p-0" id="passw" required><label class="form-control-placeholder p-0" for="passw"><p style="color: black;">CVV</p></label> </div>
                     </div>
                 </div>
                 <div class="row lrow mt-4 mb-3">
                     <div class="col-sm-8 col-12">
-                        <h3> Total :</h3>
+                        <h3 style="color: rgba(0, 0, 0, 0.842);"> Total :</h3>
                     </div>
                     <div class="col-sm-4 col-12">
-                        <h5>&#36;150</h5>
+                        <h5 style="color: rgba(0, 0, 0, 0.842);">&#36;150</h5>
                     </div>
                 </div>
-                <div class="row mb-2">
+                {#<div class="row mb-2">
                     <div class="col-sm-12"> <a href="#myModal" class="trigger-btn" data-toggle="modal"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Payer</button> </a></div>
-                </div>
+                </div>#}
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="background-color: rgba(13, 58, 47, 0.842);">
+                    Payer
+                  </button>
             </form>
         </div>
     </div>
 </div>
 
 <!-- Modal HTML -->
-<div id="myModal" class="modal fade">
+<div id="exampleModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-confirm">
         <div class="modal-content">
             <div class="modal-header">
@@ -62,10 +82,30 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+            
+                <button class="btn btn-success btn-block" ><a  class="btn btn-success btn-block" href="/">Retour</a></button>
             </div>
         </div>
     </div>
-</div>   
+</div> 
+{#<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-confirm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>#}
 {% endblock %}
-
-
